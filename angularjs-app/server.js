@@ -11,6 +11,15 @@ const SECRET_KEY = "your_jwt_secret_key";
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, "public")));
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://localhost:4200");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
+const filePath = path.join(__dirname, "data.json");
+
 // Login API to generate JWT
 app.post("/api/login", (req, res) => {
   const { username, password } = req.body;
@@ -36,7 +45,6 @@ function authenticateJWT(req, res, next) {
 
 // API to fetch data.json
 app.get("/api/data", authenticateJWT, (req, res) => {
-  const filePath = path.join(__dirname, "data.json");
   fs.readFile(filePath, "utf8", (err, data) => {
     if (err) {
       res.status(500).json({ message: "Error reading data file" });
@@ -44,6 +52,24 @@ app.get("/api/data", authenticateJWT, (req, res) => {
       res.json(JSON.parse(data));
     }
   });
+});
+
+app.get("/api/projects", (req, res) => {
+  fs.readFile(filePath, "utf8", (err, data) => {
+    if (err) {
+      console.error("Error reading data.json:", err);
+      return res.status(500).send("Error reading data.");
+    }
+    const jsonData = JSON.parse(data);
+    // console.log(jsonData.projects);
+    res.json(jsonData.projects);
+  });
+});
+
+app.use('/angular-projects/browser', express.static(path.join(__dirname, '../public/angular-projects/browser')));
+
+app.get('/projects', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/angular-projects/browser/index.html'));
 });
 
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));

@@ -9,7 +9,8 @@
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title">{{button.name}}</h5>
-          <a ng-href="{{button.link}}" class="btn btn-primary">START</a>
+          <a ng-href="{{button.link}}" class="btn btn-primary" ng-if="button.name !== 'Projects'">START</a>
+          <a href="/projects" class="btn btn-primary" ng-if="button.name === 'Projects'">START</a>
         </div>
       </div>
     </div>

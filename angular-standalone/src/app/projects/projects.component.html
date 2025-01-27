@@ -1,0 +1,17 @@
+<div class="container mt-4">
+    <h1>Projects Page</h1>
+    <div class="row">
+      @for (project of projects; track $index) {
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ project.name }}</h5>
+            <p class="card-text">Resources: {{ project.resources }}</p>
+            <p class="card-text">Start Date: {{ project.startDate }}</p>
+            <p class="card-text">Fund: {{ project.fund }}</p>
+          </div>
+        </div>
+      </div>
+    }
+    </div>
+  </div>

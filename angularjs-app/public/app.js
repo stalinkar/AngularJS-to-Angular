@@ -14,10 +14,10 @@ app.config(function ($routeProvider) {
       templateUrl: "views/admin.html",
       controller: "AdminController",
     })
-    .when("/projects", {
-      templateUrl: "views/projects.html",
-      controller: "ProjectsController",
-    })
+    // .when("/projects", {
+    //   templateUrl: "views/projects.html",
+    //   controller: "ProjectsController",
+    // })
     .when("/about", {
       template: "<div class='container mt-4'><h1>About Page</h1><p>This is the About Page.</p></div>",
     })
