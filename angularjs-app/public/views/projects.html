@@ -1,0 +1,22 @@
+<div class="container mt-4">
+    <h1>Projects Page</h1>
+    <table class="table table-bordered table-striped mt-3">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Resources</th>
+          <th>Start Date</th>
+          <th>Fund Allocated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="project in projects">
+          <td>{{project.name}}</td>
+          <td>{{project.resources}}</td>
+          <td>{{project.startDate}}</td>
+          <td>{{project.fund}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

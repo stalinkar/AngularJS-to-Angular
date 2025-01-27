@@ -1,3 +1,6 @@
+#File Structure
+*.lua
+
 # Logs
 logs
 *.log

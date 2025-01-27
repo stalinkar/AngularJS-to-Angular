@@ -1,0 +1,17 @@
+<div class="container mt-4">
+  <div class="text-center">
+    <img src="{{home.logo}}" alt="Logo" class="img-fluid" width="150" />
+    <h1 class="mt-3">{{home.title}}</h1>
+    <p class="lead">{{home.subtitle}}</p>
+  </div>
+  <div class="row mt-5">
+    <div class="col-md-4" ng-repeat="button in home.buttons">
+      <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">{{button.name}}</h5>
+          <a ng-href="{{button.link}}" class="btn btn-primary">START</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+{
+    "projects": [
+      { "name": "Project A", "resources": 10, "startDate": "2023-01-01", "fund": "$100,000" },
+      { "name": "Project B", "resources": 15, "startDate": "2023-06-15", "fund": "$150,000" }
+    ],
+    "users": [
+      { "userName": "admin", "role": "Administrator" },
+      { "userName": "job-dev", "role": "Developer" },
+      { "userName": "job-sdet", "role": "SDET" }
+    ],
+    "home": {
+      "logo": "/assets/logo.png",
+      "title": "Welcome to the Dashboard",
+      "subtitle": "Your one-stop solution for managing resources",
+      "buttons": [
+        { "name": "Admin", "link": "/#!/admin" },
+        { "name": "Projects", "link": "/#!/projects" },
+        { "name": "About", "link": "/#!/about" }
+      ]
+    }
+  }
+  
